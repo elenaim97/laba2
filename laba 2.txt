@@ -1,0 +1,85 @@
+//неправильный варик//
+
+#include <stdio.h>			
+#include <conio.h>
+#include <math.h>
+
+int main()
+{	
+	float x, y_razrez, s_right, s_left, r, R, a, y_2, temp;			
+	
+	printf("\nЛабораторная работа №2");
+	printf("\nВариант №11");
+	printf("\nPI-1-21-1");
+	printf("\nИмыхелова Елена\n");
+	
+	printf("\nx=");		
+	scanf("%f", &x);
+        
+        r = 0.5;
+        R = 1.0;       
+     
+     	y_razrez = sqrt(pow(R, 2)-pow(x, 2));
+     	a=2*asin(y_razrez);
+        y_2 = sqrt(pow(r, 2)-pow(0.5-x, 2));
+        
+        
+        s_right = (pow(R, 2)*(a-sin(a)))/4;
+        s_left=(((3.14*pow(R, 2))/2) + 3.14*pow(r, 2))-s_right;
+        
+        {
+            if (x < 0);
+            temp = s_left;
+            s_left = s_right;
+            s_right = temp;
+        }
+        
+        printf("\ny_razrez= %f", y_razrez);
+        printf("\ns_right= %f", s_right);
+        printf("\ns_left= %f", s_left);
+	
+	return 0;
+}
+
+
+
+//правильный варик//
+
+#include <stdio.h>			
+#include <conio.h>
+#include <math.h>
+
+int main()
+{	
+	float x, y_razrez, s_right, s_left, r, R, a, y_2,temp;			
+	
+	printf("\nЛабораторная работа №2");
+	printf("\nВариант №11");
+	printf("\nPI-1-21-1");
+	printf("\nИмыхелова Елена\n");
+	
+	printf("\nx=");		
+	scanf("%f", &x);
+        
+        r = 0.5;
+        R = 1.0;       
+     
+     	y_razrez = sqrt(pow(R, 2)-pow(x, 2));
+     	a=2*asin(y_razrez);
+        y_2 = sqrt(pow(r, 2)-pow(0.5-x, 2));
+        
+        s_right = (pow(R, 2)*(a-sin(a)))/4;
+        s_left=(((3.14*pow(R, 2))/2) + 3.14*pow(r, 2))-s_right;
+    
+        if (x<0) {
+            temp=s_left;
+            s_left=s_right;
+            s_right=temp;
+        }
+        printf("\ny_razrez= %f", y_razrez);
+        printf("\ns_right= %f", s_right);
+        printf("\ns_left= %f", s_left);
+	
+	return 0;
+}
+
